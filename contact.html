@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact support for the V-Invoice application." />
+  <title>Contact & Support | V-Invoice</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      padding-right: 20px;
+    }
+
+    .contact-method {
+      margin-bottom: 24px;
+      padding: 20px;
+      background: rgba(241, 34, 52, 0.05);
+      border-radius: 16px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .contact-method h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(241, 34, 52, 0.1);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        <img src="assets/logo.png" alt="logo" class="logo-img" />
+        <span>V-Invoice</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html#download" class="btn btn-primary">Download App</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Contact Support</h1>
+      <p>We're here to help you bill better.</p>
+    </div>
+  </div>
+
+  <main class="container document-content">
+    <div class="glass policy-card">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 style="margin-bottom: 24px">Get In Touch</h2>
+          <p style="margin-bottom: 32px">
+            Need help backing up your data, configuring a template, or
+            discovering new features? Our team is ready to assist you.
+          </p>
+
+          <div class="contact-method">
+            <h3>Email Support</h3>
+            <p>For technical support and inquiries.</p>
+            <a href="mailto:finefamilytech@gmail.com" style="
+                  color: var(--primary);
+                  font-weight: 600;
+                  text-decoration: none;
+                ">finefamilytech@gmail.com</a>
+          </div>
+
+          <div class="contact-method">
+            <h3>General Inquiries</h3>
+            <p>For business or partnership questions.</p>
+            <a href="mailto:finefamilytech@gmail.com" style="
+                  color: var(--primary);
+                  font-weight: 600;
+                  text-decoration: none;
+                ">finefamilytech@gmail.com</a>
+          </div>
+
+          <div style="margin-top: 40px">
+            <h4 style="margin-bottom: 12px">App Verification Disclosure</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted)">
+              V-Invoice does not require an online account or authentication
+              to function. All features listed on the application store are
+              fully accessible immediately upon installation locally on your
+              device.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form
+            onsubmit="event.preventDefault(); alert('In a real environment, this form would send your message. Please use the email addresses provided instead.');">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="How can we help?" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Describe your issue or question..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-col">
+        <div class="logo">
+          <img src="assets/logo.png" alt="logo" class="logo-img small" />
+          <span>V-Invoice</span>
+        </div>
+        <p>
+          Because "V" means "We". Intelligent charging and invoicing to grow
+          your enterprise safely and effectively.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Application</h4>
+        <a href="index.html#features">Features</a>
+        <a href="contact.html">Support / Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 V-Invoice. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
