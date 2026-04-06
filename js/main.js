@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Simple scroll animation for feature cards
+    // Simple scroll animation for elements
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -19,17 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
-        observer.observe(card);
+    const animatedElements = document.querySelectorAll('.feature-card, .roadmap-step, .analytics-row, .section-header');
+    animatedElements.forEach((el, index) => {
+        el.classList.add('reveal-element');
+        if (el.classList.contains('delay-1')) el.style.transitionDelay = '0.1s';
+        if (el.classList.contains('delay-2')) el.style.transitionDelay = '0.2s';
+        if (el.classList.contains('delay-3')) el.style.transitionDelay = '0.3s';
+        observer.observe(el);
     });
 });

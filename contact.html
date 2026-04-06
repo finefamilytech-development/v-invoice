@@ -194,6 +194,21 @@
       <p>&copy; 2026 V-Invoice. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Fix for mobile keyboards covering input fields
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          // Delay to allow virtual keyboard to appear before scrolling
+          setTimeout(() => {
+            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 300);
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
