@@ -5,161 +5,626 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Privacy Policy for the V-Invoice application. Read about how your data is handled securely and locally." />
+    content="Privacy Policy for V-Invoice — a 100% offline invoice & billing app. We collect no personal data. Your financial data stays on your device." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Privacy Policy | V-Invoice" />
+  <meta property="og:description"
+    content="V-Invoice never collects, stores, or transmits your personal data. Read our full privacy policy." />
   <title>Privacy Policy | V-Invoice</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ── Privacy Page — Light Theme ──────────────────────────────────────── */
+
+    /* Page header */
+    .policy-page-header {
+      background: linear-gradient(160deg, #fff5f5 0%, #fff 50%, #f0f4ff 100%);
+      padding: 120px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .policy-page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 55% at 50% -10%, rgba(241,34,52,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .policy-page-header h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+      position: relative;
+      letter-spacing: -0.5px;
+    }
+    .policy-page-header .ph-badge {
+      display: inline-block;
+      background: rgba(241,34,52,0.08);
+      border: 1px solid rgba(241,34,52,0.2);
+      color: #f12234;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+    .policy-page-header p {
+      color: #64748b;
+      font-size: 15px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .policy-page-header code {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #f12234;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    /* Content wrap */
+    .policy-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* Summary bar */
+    .policy-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .policy-summary-bar .ib-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .policy-summary-bar .ib-text { font-size: 14.5px; line-height: 1.75; color: #166534; }
+    .policy-summary-bar .ib-text strong { color: #14532d; }
+
+    /* Table of contents */
+    .policy-toc {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 44px;
+    }
+    .policy-toc h3 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .policy-toc ol {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    .policy-toc ol li a {
+      color: #334155;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .policy-toc ol li a:hover { color: #f12234; }
+
+    /* Section cards */
+    .policy-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(15,23,42,0.04);
+      transition: box-shadow 0.3s ease;
+    }
+    .policy-section:hover {
+      box-shadow: 0 6px 24px rgba(15,23,42,0.08);
+    }
+    .policy-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--accent, #f12234);
+      border-radius: 4px 0 0 4px;
+    }
+    .policy-section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .policy-section h2 .sec-icon { font-size: 1.25rem; }
+    .policy-section p {
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul, .policy-section ol {
+      padding-left: 22px;
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .policy-section li { margin-bottom: 6px; }
+    .policy-section strong { color: #0f172a; font-weight: 600; }
+    .policy-section code {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #f12234;
+      padding: 1px 7px;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    /* Info boxes inside sections */
+    .info-box {
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .info-box.green {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+    }
+    .info-box.blue {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+    .info-box.yellow {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+    }
+    .info-box .ib-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .info-box .ib-text { font-size: 14px; line-height: 1.75; color: #374151; }
+    .info-box.green .ib-text { color: #166534; }
+    .info-box.blue  .ib-text { color: #1e3a8a; }
+    .info-box.yellow .ib-text { color: #78350f; }
+    .info-box .ib-text strong { font-weight: 700; }
+
+    /* Permission table */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .perm-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .perm-table td {
+      font-size: 14px;
+      color: #475569;
+      padding: 13px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    .perm-table td strong { color: #0f172a; font-weight: 600; }
+    .perm-table td small { color: #94a3b8; font-size: 12px; }
+    .perm-table tr:last-child td { border-bottom: none; }
+    .perm-table tr:nth-child(even) td { background: #fafafa; }
+    .badge-yes {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 100px;
+    }
+
+    /* Contact CTA card */
+    .contact-card {
+      background: linear-gradient(135deg, #fff5f5, #fff0f0);
+      border: 1px solid rgba(241,34,52,0.15);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-top: 40px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(241,34,52,0.06);
+    }
+    .contact-card h3 {
+      color: #0f172a;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .contact-card p {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+    .contact-card .contact-email {
+      display: inline-block;
+      background: #f12234;
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(241,34,52,0.28);
+    }
+    .contact-card .contact-email:hover {
+      background: #c01b29;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(241,34,52,0.36);
+    }
+
+    @media (max-width: 640px) {
+      .policy-section { padding: 24px 20px; }
+      .policy-toc ol { grid-template-columns: 1fr; }
+      .policy-wrap { padding: 36px 16px 60px; }
+      .perm-table th, .perm-table td { padding: 10px 10px; font-size: 13px; }
+    }
+  </style>
+
 </head>
 
 <body>
-  <nav class="navbar">
+  <!-- ── Navbar ──────────────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
     <div class="container nav-content">
-      <div class="logo">
-        <img src="assets/logo.png" alt="logo" class="logo-img" />
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="V-Invoice Logo" class="logo-img" />
         <span>V-Invoice</span>
-      </div>
+      </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="index.html#download" class="btn btn-primary">Download App</a>
+        <a href="index.html#features">Features</a>
+        <a href="terms.html">Terms</a>
+        <a href="index.html#download" class="btn btn-primary nav-cta">Download App</a>
       </div>
     </div>
   </nav>
 
-  <div class="page-header">
+  <!-- ── Page Header ─────────────────────────────────────────────────── -->
+  <div class="policy-page-header">
     <div class="container">
-      <h1>Privacy Policy</h1>
-      <p>Last Updated: March 2026</p>
+      <div class="ph-badge">Legal Document</div>
+      <h1>🔒 Privacy Policy</h1>
+      <p>Effective Date: <strong>May 7, 2026</strong> &nbsp;·&nbsp; Last Updated: <strong>May 7, 2026</strong></p>
+      <p style="margin-top:8px;">App: <strong>V-Invoice</strong> &nbsp;·&nbsp; Package: <code>com.vinvoice.app</code></p>
     </div>
   </div>
 
-  <main class="container document-content">
-    <div class="glass policy-card">
-      <section>
-        <h2>1. Introduction</h2>
-        <p>
-          Welcome to <strong>V-Invoice</strong> ("we", "our", "us"). We
-          respect your privacy and are committed to protecting your personal
-          information and your company's financial data. This Privacy Policy
-          explains our practices regarding data collection, storage, and usage
-          when you use our mobile application ("App").
-        </p>
-        <p>
-          At V-Invoice, our philosophy is simple:
-          <strong>Your data is yours.</strong> Our application is designed
-          around local-first data principles.
-        </p>
-      </section>
+  <!-- ── Main Content ────────────────────────────────────────────────── -->
+  <div class="policy-wrap">
 
-      <section>
-        <h2>2. Data Collection & Storage</h2>
-        <p>
-          <strong>Offline First:</strong> V-Invoice functions entirely
-          offline. All data you input—including company settings, client
-          details, products, invoices, payment histories, and digital
-          signatures—is stored <strong>locally on your device</strong>.
-        </p>
-        <p>
-          We do not operate remote databases or cloud servers to store your
-          business invoices. We do not sync, transmit, or harvest your
-          financial documentation unless explicitly initiated by you (e.g.,
-          via the share or backup functions).
-        </p>
-      </section>
-
-      <section>
-        <h2>3. Use of Device Permissions</h2>
-        <p>
-          To provide full functionality, the App may request the following
-          permissions:
-        </p>
-        <ul>
-          <li>
-            <strong>Storage / Files accessing:</strong> Required to generate
-            PDF files, process digital signatures, upload company logos, and
-            handle JSON backup imports/exports.
-          </li>
-          <li>
-            <strong>Camera / Photos:</strong> Required only if you choose to
-            directly snap a photo for a company logo or signature upload.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>4. Third-Party Sharing</h2>
-        <p>
-          Because your data is stored securely on your local device,
-          <strong>we do not sell, rent, or share your data with third
-            parties</strong>. Generating a PDF or sending a reminder uses your device's native
-          sharing capabilities (e.g., Apple Share Sheet or Android Intent),
-          which invokes third-party email or messaging clients of your
-          choosing.
-        </p>
-      </section>
-
-      <section>
-        <h2>5. Data Backups</h2>
-        <p>
-          You have the option to export all data to a single JSON file for
-          backup purposes. This file is generated locally on your device. You
-          are responsible for safely storing this file on your preferred
-          medium (icloud, google drive, local disk, etc.).
-        </p>
-      </section>
-
-      <section id="terms">
-        <h2>6. Terms of Service</h2>
-        <p>
-          By downloading and using V-Invoice, you agree that you are solely
-          responsible for compliance with your local tax laws, invoicing
-          regulations, and data persistence methodologies. The templates
-          provided are guides and must be verified by you for official
-          compliance where applicable.
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Contact Us</h2>
-        <p>
-          If you have any questions or concerns about this Privacy Policy,
-          please contact us through the app support channels or by reaching
-          out to your system administrator.
-        </p>
-      </section>
+    <!-- Summary highlight -->
+    <div class="policy-summary-bar">
+      <div class="ib-icon">✅</div>
+      <div class="ib-text">
+        <strong>Short Version:</strong> V-Invoice is a 100% offline app. We <strong>do not collect, transmit, or store any of your personal or financial data</strong> on external servers. Everything stays on your device. No account required. No analytics. No ads.
+      </div>
     </div>
-  </main>
 
+    <!-- Table of Contents -->
+    <div class="policy-toc">
+      <h3>📋 Table of Contents</h3>
+      <ol>
+        <li><a href="#s1">Introduction</a></li>
+        <li><a href="#s2">Information We Collect</a></li>
+        <li><a href="#s3">How We Use Information</a></li>
+        <li><a href="#s4">Device Permissions</a></li>
+        <li><a href="#s5">Data Storage &amp; Security</a></li>
+        <li><a href="#s6">Third-Party Services</a></li>
+        <li><a href="#s7">Data Sharing &amp; Disclosure</a></li>
+        <li><a href="#s8">Backup &amp; Export</a></li>
+        <li><a href="#s9">Children's Privacy</a></li>
+        <li><a href="#s10">Your Rights</a></li>
+        <li><a href="#s11">Changes to This Policy</a></li>
+        <li><a href="#s12">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. Introduction -->
+    <div class="policy-section" id="s1" style="--accent:#f12234;">
+      <h2><span class="sec-icon">📄</span> 1. Introduction</h2>
+      <p>
+        Welcome to <strong>V-Invoice</strong> ("we", "our", or "us"). V-Invoice is a professional invoice and quotation management application for Android and iOS devices.
+      </p>
+      <p>
+        This Privacy Policy describes how V-Invoice handles information when you use our mobile application (the "App"). By installing or using the App, you agree to the practices described in this policy.
+      </p>
+      <p>
+        Our core design principle is <strong>local-first, offline-first privacy</strong>. Your business data belongs to you and only you.
+      </p>
+    </div>
+
+    <!-- 2. Information We Collect -->
+    <div class="policy-section" id="s2" style="--accent:#2563eb;">
+      <h2><span class="sec-icon">🗃️</span> 2. Information We Collect</h2>
+      <p>
+        <strong>V-Invoice does not collect any personal information.</strong> The App operates entirely offline and does not communicate with any external server, cloud service, or remote database.
+      </p>
+      <p>The following data is created and stored <strong>locally on your device only</strong>:</p>
+      <ul>
+        <li>Company profile (name, email, phone, address, GST/Tax ID, logo, signature)</li>
+        <li>Client contact details (name, email, phone, address)</li>
+        <li>Product and service catalogue (descriptions, prices, tax rates)</li>
+        <li>Invoices and quotations (line items, amounts, dates, statuses)</li>
+        <li>Payment records and history</li>
+        <li>App preferences and settings (default currency, templates, etc.)</li>
+      </ul>
+      <div class="info-box blue">
+        <div class="ib-icon">ℹ️</div>
+        <div class="ib-text">
+          <strong>No account required.</strong> V-Invoice requires no sign-up, login, email address, or account of any kind. You can use the app immediately after installation without providing any personal information to us.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. How We Use Information -->
+    <div class="policy-section" id="s3" style="--accent:#16a34a;">
+      <h2><span class="sec-icon">⚙️</span> 3. How We Use Information</h2>
+      <p>
+        All data entered into the App is used <strong>solely to provide the App's features to you, locally on your device</strong>:
+      </p>
+      <ul>
+        <li>Generating professional PDF invoices and quotations</li>
+        <li>Displaying your dashboard with revenue summaries and overdue alerts</li>
+        <li>Tracking payment statuses and partial payments</li>
+        <li>Generating financial reports and Excel (XLSX) exports</li>
+        <li>Sending payment reminders via your device's messaging apps (WhatsApp, SMS, Email)</li>
+        <li>Creating local JSON backup files for data recovery</li>
+      </ul>
+      <p>
+        We do <strong>not</strong> use your data for advertising, profiling, analytics, machine learning, or any purpose beyond operating the App on your device.
+      </p>
+    </div>
+
+    <!-- 4. Device Permissions -->
+    <div class="policy-section" id="s4" style="--accent:#ca8a04;">
+      <h2><span class="sec-icon">🔑</span> 4. Device Permissions</h2>
+      <p>
+        The App may request the following Android/iOS permissions. All permissions are used <strong>exclusively for local on-device functionality</strong> and are never used to transmit data externally.
+      </p>
+      <table class="perm-table">
+        <tr>
+          <th>Permission</th>
+          <th>Why It's Needed</th>
+          <th>Required</th>
+        </tr>
+        <tr>
+          <td><strong>READ / WRITE External Storage</strong></td>
+          <td>Save PDF invoices, XLSX reports, and JSON backup files to your device's Downloads / Documents folder.</td>
+          <td><span class="badge-yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><strong>READ Media Images</strong><br/><small style="color:#64748b;">(Android 13+ scoped storage)</small></td>
+          <td>Allow you to pick a company logo or digital signature image from your photo gallery.</td>
+          <td><span class="badge-yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><strong>Internet Access</strong></td>
+          <td>Used <em>only</em> to load Google Fonts for invoice PDF rendering inside the WebView. No personal data is sent. Can be blocked without breaking core functionality.</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td><strong>Share / Intent</strong></td>
+          <td>Open your device's native share sheet to send PDFs or the app link to messaging apps (WhatsApp, Email, etc.). GenInvoice does not read the destination or message content.</td>
+          <td>Optional</td>
+        </tr>
+      </table>
+      <div class="info-box yellow">
+        <div class="ib-icon">⚠️</div>
+        <div class="ib-text">
+          You can deny optional permissions without affecting invoice creation, client management, or other core features. Denying storage will prevent saving files locally.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Data Storage & Security -->
+    <div class="policy-section" id="s5" style="--accent:#7c3aed;">
+      <h2><span class="sec-icon">🗄️</span> 5. Data Storage &amp; Security</h2>
+      <p>
+        All App data is stored using <strong>React Native AsyncStorage</strong>, which maps to the device's internal sandboxed storage. This data:
+      </p>
+      <ul>
+        <li>Is accessible only to the GenInvoice application sandbox.</li>
+        <li>Is automatically removed if you uninstall the App (unless you export a backup beforehand).</li>
+        <li>Is not accessible by other apps on your device.</li>
+        <li>Is protected by your device's built-in hardware encryption (when device encryption is enabled).</li>
+      </ul>
+      <p>
+        We strongly recommend enabling <strong>device screen lock and encryption</strong> on your phone to ensure maximum protection of your financial data.
+      </p>
+      <p>
+        <strong>We have no access to your data at any time.</strong> If you lose your device without a backup, your data cannot be recovered by us.
+      </p>
+    </div>
+
+    <!-- 6. Third-Party Services -->
+    <div class="policy-section" id="s6" style="--accent:#0891b2;">
+      <h2><span class="sec-icon">🔗</span> 6. Third-Party Services</h2>
+      <p>
+        V-Invoice uses open-source libraries to provide its features. <strong>None of these components collect user data or communicate with external analytics or advertising servers.</strong>
+      </p>
+      <ul>
+        <li><strong>React Native</strong> — Core mobile framework (Meta / open source)</li>
+        <li><strong>Local File System library</strong> — Local filesystem read/write only</li>
+        <li><strong>Share / Intent library</strong> — Opens your device's native share sheet; no data interception</li>
+        <li><strong>Document Picker library</strong> — Opens your device's file picker; no data transmitted</li>
+        <li><strong>HTML-to-PDF library</strong> — Converts invoice HTML to PDF locally on device</li>
+        <li><strong>WebView component</strong> — Renders invoice HTML locally; no browsing data collected</li>
+        <li><strong>Google Fonts (CDN)</strong> — Fonts loaded for PDF rendering. Only a standard HTTP request for font files is made. No cookies or tracking. Can be disabled by blocking internet access.</li>
+      </ul>
+      <p>
+        We do <strong>not</strong> use Google Analytics, Firebase, Crashlytics, Facebook SDK, advertising SDKs, or any third-party analytics or tracking libraries.
+      </p>
+    </div>
+
+
+    <!-- 7. Data Sharing -->
+    <div class="policy-section" id="s7" style="--accent:#dc2626;">
+      <h2><span class="sec-icon">🚫</span> 7. Data Sharing &amp; Disclosure</h2>
+      <p>
+        <strong>We do not sell, rent, lease, or share your data with any third party.</strong>
+      </p>
+      <p>
+        When you use the "Share as PDF" or "Send Reminder" features, you initiate the action through your device's native share sheet. The PDF or message is sent to the app of your choice (e.g., WhatsApp, Gmail). GenInvoice has no control over or access to the receiving application and does not log what was shared or to whom.
+      </p>
+      <p>
+        The only scenario where your data could leave your device is when <strong>you explicitly choose to share or export it</strong> (e.g., sending a PDF via WhatsApp, or saving a backup to cloud storage). These actions are initiated by you and under your full control.
+      </p>
+    </div>
+
+    <!-- 8. Backup & Export -->
+    <div class="policy-section" id="s8" style="--accent:#16a34a;">
+      <h2><span class="sec-icon">💾</span> 8. Backup &amp; Export</h2>
+      <p>
+        GenInvoice provides an optional <strong>Export Backup</strong> feature that saves all your data as a JSON file to your device's <code style="color:#f87171;">Downloads/V-Invoice/</code> folder. This file:
+      </p>
+      <ul>
+        <li>Contains all your invoices, clients, products, and settings in plain JSON format.</li>
+        <li>Is created entirely on your device — no data is sent to our servers.</li>
+        <li>Can optionally be shared by you to cloud storage (Google Drive, etc.) — this action is your choice and responsibility.</li>
+        <li>Can be used to restore data via the <strong>Import Backup</strong> feature.</li>
+      </ul>
+      <p>
+        You are solely responsible for the security and storage of your backup files once they leave the App's local storage.
+      </p>
+    </div>
+
+    <!-- 9. Children's Privacy -->
+    <div class="policy-section" id="s9" style="--accent:#ea580c;">
+      <h2><span class="sec-icon">👶</span> 9. Children's Privacy</h2>
+      <p>
+        GenInvoice is a professional business tool intended for users <strong>aged 13 and above</strong>. The App does not knowingly collect any information from children under 13. Since we collect no personal data from any user, there is no risk of collecting children's data either.
+      </p>
+      <p>
+        If you are a parent or guardian and believe your child has used this App, please note that no data is transmitted to us and the data on the device is under your device's parental control settings.
+      </p>
+    </div>
+
+    <!-- 10. Your Rights -->
+    <div class="policy-section" id="s10" style="--accent:#2563eb;">
+      <h2><span class="sec-icon">⚖️</span> 10. Your Rights</h2>
+      <p>
+        Since GenInvoice stores all data locally on your device and we have no access to it, you have full and direct control over your data at all times:
+      </p>
+      <ul>
+        <li><strong>Access:</strong> All your data is visible directly within the App at any time.</li>
+        <li><strong>Correction:</strong> Edit any invoice, client, product, or setting from within the App.</li>
+        <li><strong>Deletion:</strong> Use <em>Settings → Clear All Data</em> to permanently delete all App data from your device.</li>
+        <li><strong>Portability:</strong> Use <em>Settings → Backup Data</em> to export all data as a JSON file.</li>
+        <li><strong>Uninstallation:</strong> Uninstalling the App removes all data from your device permanently (unless backed up).</li>
+      </ul>
+      <p>
+        Users in the EU (GDPR), California (CCPA), and other jurisdictions with data rights legislation: because we collect no personal data and operate no servers, there is no data for us to provide, correct, or delete on your behalf. All control is local and in your hands.
+      </p>
+    </div>
+
+    <!-- 11. Changes -->
+    <div class="policy-section" id="s11" style="--accent:#7c3aed;">
+      <h2><span class="sec-icon">📝</span> 11. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last Updated" date at the top of this page. For significant changes, we may display an in-app notice.
+      </p>
+      <p>
+        We encourage you to review this policy periodically. Continued use of the App after changes constitutes your acceptance of the revised policy.
+      </p>
+    </div>
+
+    <!-- 12. Contact -->
+    <div class="policy-section" id="s12" style="--accent:#f12234;">
+      <h2><span class="sec-icon">📬</span> 12. Contact Us</h2>
+      <p>
+      <p>If you have any questions, concerns, or feedback about this Privacy Policy or the V-Invoice App, please reach out to us. We aim to respond within 2–3 business days.</p>
+      <ul>
+        <li><strong>App Name:</strong> V-Invoice</li>
+        <li><strong>Developer:</strong> V-Invoice Team</li>
+        <li><strong>Email:</strong> <a href="mailto:support@vinvoice.app" style="color:#f87171;">support@vinvoice.app</a></li>
+        <li><strong>Website:</strong> <a href="https://finefamilytech-development.github.io/v-invoice/" style="color:#f87171;">https://finefamilytech-development.github.io/v-invoice/</a></li>
+        <li><strong>Play Store:</strong> <a href="https://play.google.com/store/apps/details?id=com.vinvoice.app" style="color:#f87171;">V-Invoice on Google Play</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="contact-card">
+      <h3>Have a privacy question?</h3>
+      <p>We take your privacy seriously and are happy to answer any questions about how V-Invoice handles your data.</p>
+      <a href="mailto:finefamilytech@gmail.com" class="contact-email">📧 finefamilytech@gmail.com</a>
+    </div>
+
+  </div>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="container footer-content">
-      <div class="footer-col">
+      <div class="footer-col footer-brand">
         <div class="logo">
           <img src="assets/logo.png" alt="logo" class="logo-img small" />
           <span>V-Invoice</span>
         </div>
-        <p>
-          Because "V" means "We". Intelligent charging and invoicing to grow
-          your enterprise safely and effectively.
-        </p>
+        <p>Because "V" means "We". Intelligent invoicing to grow your enterprise safely and effectively.</p>
+        <div class="footer-tagline">Organize Smarter, Bill Faster.</div>
       </div>
       <div class="footer-col">
         <h4>Application</h4>
         <a href="index.html#features">Features</a>
-        <a href="contact.html">Support / Contact</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#analytics">Analytics</a>
+        <a href="index.html#download">Download App</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Us</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 V-Invoice. All rights reserved.</p>
+      <p>&copy; 2026 V-Invoice. All rights reserved. &nbsp;·&nbsp;
+        <a href="privacy.html" style="color:#64748b;">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="terms.html" style="color:#64748b;">Terms of Service</a>
+      </p>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

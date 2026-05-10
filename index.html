@@ -5,225 +5,305 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="V-Invoice: Smart Billing, Because 'V' Means 'We'. Generating professional invoices, managing clients, and tracking payments has never been easier." />
+    content="V-Invoice: Smart Billing, Because 'V' Means 'We'. Create professional invoices & quotations, manage clients, track payments, and export PDF reports — 100% offline." />
+  <meta name="keywords" content="invoice app, billing software, GST invoice, PDF invoice, quotation app, client management, offline invoice" />
+  <meta property="og:title" content="V-Invoice | Billing Better, Together" />
+  <meta property="og:description" content="Professional invoicing, quotation management, client management, and financial analytics — all on your device. 100% offline & free." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:url" content="https://finefamilytech-development.github.io/v-invoice/" />
   <title>V-Invoice | Billing Better, Together</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <nav class="navbar">
+
+  <!-- ── Navbar ─────────────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
     <div class="container nav-content">
-      <div class="logo">
-        <img src="assets/logo.png" alt="logo" class="logo-img" />
+      <a href="#" class="logo">
+        <img src="assets/logo.png" alt="V-Invoice Logo" class="logo-img" />
         <span>V-Invoice</span>
-      </div>
-      <div class="nav-links">
+      </a>
+      <div class="nav-links" id="navLinks">
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#analytics">Analytics</a>
         <a href="privacy.html">Privacy</a>
-        <a href="#download" class="btn btn-primary">Download App</a>
+        <a href="#download" class="btn btn-primary nav-cta">Download App</a>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+      <a href="#analytics" class="mobile-nav-link">Analytics</a>
+      <a href="privacy.html" class="mobile-nav-link">Privacy</a>
+      <a href="#download" class="btn btn-primary mobile-cta">Download App</a>
     </div>
   </nav>
 
+  <!-- ── Hero ──────────────────────────────────────────────────────── -->
   <header class="hero">
     <div class="hero-bg-shapes">
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
     </div>
     <div class="container hero-content">
-      <img src="assets/logo.png" alt="V-Invoice Logo" class="hero-logo animate-fade-in-up" />
-      <h1 class="animate-fade-in-up delay-1">
-        Billing Better, Together. <br />Because
+      <div class="hero-badge animate-fade-in-up">
+        <span class="badge-dot"></span>
+        <span>Now with Quotations, Analytics &amp; XLSX Export</span>
+      </div>
+      <img src="assets/logo.png" alt="V-Invoice Logo" class="hero-logo animate-fade-in-up delay-1" />
+      <h1 class="animate-fade-in-up delay-2">
+        Billing Better, Together.<br />Because
         <span class="highlight">"V"</span> Means
         <span class="highlight">"We"</span>.
       </h1>
-      <p class="subtitle animate-fade-in-up delay-2">
-        A complete smart invoicing suite designed for modern businesses.
-        Effortlessly generate beautifully designed PDF invoices, create and
-        manage products, gain insights with advanced payment analytics,
-        and export detailed financial reports. Manage clients seamlessly,
-        track multi-part payments, and apply digital signatures—all from
-        your device.
+      <p class="subtitle animate-fade-in-up delay-3">
+        A complete smart invoicing suite for modern businesses. Generate beautiful PDF invoices,
+        manage clients and products, gain insights with advanced analytics, and export detailed
+        financial reports — all directly from your device.
       </p>
-      <div class="hero-cta animate-fade-in-up delay-3">
-        <a href="#features" class="btn btn-primary btn-large">Explore Features</a>
-        <a href="#how-it-works" class="btn btn-outline btn-large">How It Works</a>
+      <div class="hero-cta animate-fade-in-up delay-4">
+        <a href="#download" class="btn btn-primary btn-large btn-glow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 16V4m0 12l-4-4m4 4l4-4M4 20h16"/></svg>
+          Download Free
+        </a>
+        <a href="#features" class="btn btn-outline btn-large">Explore Features</a>
+      </div>
+      <!-- Stats Strip -->
+      <div class="hero-stats animate-fade-in-up delay-5">
+        <div class="stat-item">
+          <span class="stat-num" data-target="6">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">PDF Templates</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Offline & Private</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="50">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Currencies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="0">Free</span>
+          <span class="stat-label">Forever</span>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- ── Features ──────────────────────────────────────────────────── -->
   <section id="features" class="features-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal-element">
+        <span class="badge">What We Offer</span>
         <h2>Powerful Tools for Your Business</h2>
-        <p>
-          Everything you need to get paid faster and look more professional.
-        </p>
+        <p>Everything you need to get paid faster and look more professional.</p>
       </div>
 
       <div class="features-grid">
-        <!-- Feature 1 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">📑</div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 8,145,178;">📋</div>
+          <h3>Quotation Management</h3>
+          <p>Send price estimates before work begins. Track status (Draft → Sent → Accepted) and convert accepted quotations to invoices in one tap.</p>
+          <div class="feature-tags">
+            <span class="tag">Estimates</span><span class="tag">Convert to Invoice</span>
+          </div>
+        </div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 241,34,52;">📑</div>
           <h3>6 Premium Templates</h3>
-          <p>
-            Choose from beautifully crafted PDF templates including Classic,
-            Modern, Minimal, Elegant, Tally, and GST formats to suit your
-            brand perfectly.
-          </p>
+          <p>Classic, Modern, Minimal, Elegant, Tally, and GST formats to suit your brand perfectly.</p>
+          <div class="feature-tags">
+            <span class="tag">Classic</span><span class="tag">GST</span><span class="tag">Tally</span>
+          </div>
         </div>
-        <!-- Feature 2 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">✍️</div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 37,99,235;">✍️</div>
           <h3>Digital Signatures</h3>
-          <p>
-            Easily upload your authorized signature. V-Invoice automatically
-            appends your digital signature to generated invoices before
-            sending.
-          </p>
+          <p>Upload your authorized signature once. V-Invoice automatically appends it to every generated invoice.</p>
+          <div class="feature-tags">
+            <span class="tag">Auto-embed</span><span class="tag">Secure</span>
+          </div>
         </div>
-        <!-- Feature 3 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">🔔</div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 16,163,74;">🔔</div>
           <h3>Smart Reminders</h3>
-          <p>
-            Configure default payment reminder messages using dynamic tags.
-            Send gentle follow-ups for overdue payments with a single tap.
-          </p>
+          <p>Configure default payment reminders using dynamic tags. Send gentle follow-ups for overdue invoices in one tap.</p>
+          <div class="feature-tags">
+            <span class="tag">Dynamic Tags</span><span class="tag">One Tap</span>
+          </div>
         </div>
-        <!-- Feature 4 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">📊</div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 202,138,4;">📊</div>
           <h3>Payment Tracking</h3>
-          <p>
-            Keep track of split payments and partial installments easily. View
-            interactive visual progress bars showing what has been paid versus
-            what is pending.
-          </p>
+          <p>Track split payments and partial installments. Visual progress bars show paid vs. pending at a glance.</p>
+          <div class="feature-tags">
+            <span class="tag">Split Payments</span><span class="tag">Visual</span>
+          </div>
         </div>
-        <!-- Feature 5 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">📈</div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 124,58,237;">📈</div>
           <h3>Advanced Reporting</h3>
-          <p>
-            Gain deep insights with visual revenue trends, status breakdowns,
-            and average invoice values. Monitor your business growth through
-            interactive charts and real-time analytics.
-          </p>
+          <p>Revenue trends, status breakdowns, and average invoice values. Real-time analytics to monitor business growth.</p>
+          <div class="feature-tags">
+            <span class="tag">Charts</span><span class="tag">Trends</span>
+          </div>
         </div>
-        <!-- Feature 6 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">📊</div>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 22,163,74;">📊</div>
           <h3>XLSX Export</h3>
-          <p>
-            Export all your invoice data directly to Microsoft Excel. Perfect for
-            accounting, auditing, or further analysis. Get a full financial
-            summary in a single tap.
-          </p>
+          <p>Export all invoice data to Microsoft Excel with a full financial summary row in a single tap.</p>
+          <div class="feature-tags">
+            <span class="tag">Excel</span><span class="tag">Accounting</span>
+          </div>
         </div>
-        <!-- Feature 7 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">🔒</div>
-          <h3>100% Private & Local</h3>
-          <p>
-            Your financial data never leaves your device. V-Invoice operates
-            completely offline with local storage and secure JSON backup/restore
-            functionalities.
-          </p>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 14,165,233;">🔒</div>
+          <h3>100% Private &amp; Local</h3>
+          <p>Your financial data never leaves your device. Completely offline with secure JSON backup/restore.</p>
+          <div class="feature-tags">
+            <span class="tag">Offline</span><span class="tag">JSON Backup</span>
+          </div>
         </div>
-        <!-- Feature 8 -->
-        <div class="feature-card glass">
-          <div class="feature-icon">💱</div>
-          <h3>Global Currencies & Taxes</h3>
-          <p>
-            Extensive support for all major global currencies and flexible
-            tax structures (GST/VAT), covering both inclusive and exclusive
-            billing models.
-          </p>
+        <div class="feature-card glass reveal-element">
+          <div class="feature-icon-wrap" style="--icon-color: 241,34,52;">💱</div>
+          <h3>Global Currencies &amp; Taxes</h3>
+          <p>Support for 50+ global currencies and flexible tax structures (GST/VAT) for both inclusive and exclusive billing.</p>
+          <div class="feature-tags">
+            <span class="tag">GST/VAT</span><span class="tag">50+ Currencies</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── How It Works ───────────────────────────────────────────────── -->
   <section id="how-it-works" class="how-it-works-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal-element">
         <span class="badge">Simple Workflow</span>
         <h2>How V-Invoice Works</h2>
-        <p>
-          Four simple steps to transform your billing process from tedious to effortless.
-        </p>
+        <p>Five simple steps to transform your billing from tedious to effortless.</p>
       </div>
 
       <div class="roadmap-container">
-        <!-- Roadmap Step 1 -->
+        <!-- Step 1 -->
         <div class="roadmap-step reveal-element">
           <div class="roadmap-image">
-            <div class="mockup-screen-roadmap glass-dark">
-              <img src="assets/step-dashboard.jpg" alt="V-Invoice Dashboard" />
+            <div class="phone-frame">
+              <img src="assets/step-dashboard.jpg" alt="V-Invoice Dashboard" loading="lazy" />
             </div>
           </div>
           <div class="roadmap-content">
             <div class="step-badge">Phase 01</div>
             <h3>Intelligent Dashboard</h3>
             <p>Your business pulse at a glance. Track revenue trends, monitor pending payments, and access quick actions from a unified, beautiful dashboard that grows with your enterprise.</p>
+            <ul class="step-features">
+              <li>✓ Real-time revenue &amp; outstanding stats</li>
+              <li>✓ Overdue alerts</li>
+              <li>✓ Quick invoice creation</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Roadmap Step 2 -->
+        <!-- Step 2 -->
         <div class="roadmap-step reverse reveal-element">
           <div class="roadmap-image">
-            <div class="mockup-screen-roadmap glass-dark">
-              <img src="assets/step-clients.jpg" alt="Client Management" />
+            <div class="phone-frame">
+              <img src="assets/step-quotations.jpg" alt="Quotation Management" loading="lazy" />
             </div>
           </div>
           <div class="roadmap-content">
             <div class="step-badge">Phase 02</div>
-            <h3>Unified CRM & Inventory</h3>
-            <p>Seamlessly manage your global client base and product inventory. Save frequently used details to generate professional invoices in a single tap without manual data entry.</p>
+            <h3>Quotation Management</h3>
+            <p>Send price estimates before work begins. Track status (Draft → Sent → Accepted) and convert accepted quotations directly into invoices in one tap — zero re-entry.</p>
+            <ul class="step-features">
+              <li>✓ Draft, Sent, Accepted, Rejected status</li>
+              <li>✓ Convert to invoice in 1 tap</li>
+              <li>✓ Share as PDF</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Roadmap Step 3 -->
+        <!-- Step 3 -->
         <div class="roadmap-step reveal-element">
           <div class="roadmap-image">
-            <div class="mockup-screen-roadmap glass-dark">
-              <img src="assets/step-items.jpg" alt="Item Management" />
+            <div class="phone-frame">
+              <img src="assets/step-clients.jpg" alt="Client Management" loading="lazy" />
             </div>
           </div>
           <div class="roadmap-content">
             <div class="step-badge">Phase 03</div>
-            <h3>Smart Itemization</h3>
-            <p>Organize your products and services with ease. Categorize, search, and manage your offerings to keep your billing precise and professional every single time.</p>
+            <h3>Client Management</h3>
+            <p>Seamlessly manage your global client base. Save client details to generate professional invoices and quotations in a single tap without manual data entry.</p>
+            <ul class="step-features">
+              <li>✓ Client address book</li>
+              <li>✓ Search by name, email, phone</li>
+              <li>✓ Client logos &amp; profiles</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Roadmap Step 4 -->
+        <!-- Step 4 -->
         <div class="roadmap-step reverse reveal-element">
           <div class="roadmap-image">
-            <div class="mockup-screen-roadmap glass-dark">
-              <img src="assets/step-reports.jpg" alt="Revenue Analytics" />
+            <div class="phone-frame">
+              <img src="assets/step-items.jpg" alt="Item Management" loading="lazy" />
             </div>
           </div>
           <div class="roadmap-content">
             <div class="step-badge">Phase 04</div>
+            <h3>Smart Itemization</h3>
+            <p>Organize your products and services with ease. Search and manage your offerings to keep billing precise and professional every single time.</p>
+            <ul class="step-features">
+              <li>✓ Tax per item</li>
+              <li>✓ Search by name &amp; description</li>
+              <li>✓ Quick-add to invoices &amp; quotations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="roadmap-step reveal-element">
+          <div class="roadmap-image">
+            <div class="phone-frame">
+              <img src="assets/step-reports.jpg" alt="Revenue Analytics" loading="lazy" />
+            </div>
+          </div>
+          <div class="roadmap-content">
+            <div class="step-badge">Phase 05</div>
             <h3>Deep Financial Insights</h3>
-            <p>Convert your data into decisions. Analyze per-month performance, track tax breakdowns, and export comprehensive XLSX reports for accounting and tax filing with ease.</p>
+            <p>Convert your data into decisions. Analyze per-month performance, track revenue, tax breakdowns, and export comprehensive XLSX reports for accounting and tax filing.</p>
+            <ul class="step-features">
+              <li>✓ Monthly &amp; custom range</li>
+              <li>✓ Status breakdown charts</li>
+              <li>✓ One-click XLSX export</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── Analytics ─────────────────────────────────────────────────── -->
   <section id="analytics" class="analytics-section">
-    <div class="container animate-fade-in-up">
-      <div class="analytics-row">
+    <div class="container">
+      <div class="analytics-row reveal-element">
         <div class="analytics-text">
           <span class="badge">New Release</span>
           <h2>Measure success with <br /><span class="highlight">Powerful Insights</span></h2>
@@ -233,36 +313,60 @@
             or select any custom date range for precise financial tracking.
           </p>
           <ul class="feature-list">
-            <li>✨ <strong>Month-Based</strong> Performance Tracking</li>
-            <li>✨ <strong>Custom Date Range</strong> Selection</li>
-            <li>✨ <strong>Status Breakdown</strong> (Paid, Unpaid, Overdue)</li>
-            <li>✨ <strong>One-Click</strong> Excel Export (XLSX)</li>
+            <li>
+              <span class="feature-list-icon" style="background:rgba(22,163,74,0.1);color:#16a34a;">✓</span>
+              <span><strong>Month-Based</strong> Performance Tracking</span>
+            </li>
+            <li>
+              <span class="feature-list-icon" style="background:rgba(37,99,235,0.1);color:#2563eb;">✓</span>
+              <span><strong>Custom Date Range</strong> Selection</span>
+            </li>
+            <li>
+              <span class="feature-list-icon" style="background:rgba(202,138,4,0.1);color:#ca8a04;">✓</span>
+              <span><strong>Status Breakdown</strong> (Paid, Unpaid, Overdue)</span>
+            </li>
+            <li>
+              <span class="feature-list-icon" style="background:rgba(241,34,52,0.1);color:#f12234;">✓</span>
+              <span><strong>One-Click</strong> Excel Export (XLSX)</span>
+            </li>
           </ul>
         </div>
         <div class="analytics-visual">
           <div class="mockup-screen glass">
             <div class="mockup-header">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="mockup-title">Reports — April 2026</span>
             </div>
             <div class="mockup-content">
-              <!-- Visual representation of some chart bars -->
               <div class="chart-bars">
-                <div class="bar" style="height: 40%"></div>
-                <div class="bar" style="height: 60%"></div>
-                <div class="bar" style="height: 50%"></div>
-                <div class="bar highlight-bar" style="height: 85%"></div>
-                <div class="bar" style="height: 70%"></div>
+                <div class="bar" style="height: 40%" data-label="Jan"></div>
+                <div class="bar" style="height: 60%" data-label="Feb"></div>
+                <div class="bar" style="height: 50%" data-label="Mar"></div>
+                <div class="bar highlight-bar" style="height: 85%" data-label="Apr"></div>
+                <div class="bar" style="height: 70%" data-label="May"></div>
               </div>
               <div class="stat-card-row">
-                <div class="stat-card-mini">
+                <div class="stat-card-mini success-card">
                   <span class="label">Revenue</span>
                   <span class="value">₹ 8.4k</span>
                 </div>
-                <div class="stat-card-mini">
+                <div class="stat-card-mini pending-card">
                   <span class="label">Pending</span>
                   <span class="value danger">₹ 1.2k</span>
                 </div>
+                <div class="stat-card-mini">
+                  <span class="label">Collection</span>
+                  <span class="value success-text">87%</span>
+                </div>
               </div>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="floating-badge">
+            <span class="badge-icon">📤</span>
+            <div>
+              <div class="badge-title">XLSX Export</div>
+              <div class="badge-sub">One tap to Excel</div>
             </div>
           </div>
         </div>
@@ -270,54 +374,118 @@
     </div>
   </section>
 
-  <section id="download" class="banner-section">
-    <div class="container text-center">
-      <h2 style="color: white; margin-bottom: 20px; font-size: 2.5rem">
-        Ready to upgrade your invoicing experience?
-      </h2>
-      <p style="
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-          ">
-        Join the modern wave of growing businesses that trust V-Invoice to
-        manage their billing effectively.
-      </p>
-      <a href="#download" class="btn btn-white btn-large">Download V-Invoice Now</a>
+  <!-- ── Testimonials ───────────────────────────────────────────────── -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header text-center reveal-element">
+        <span class="badge">Loved By Users</span>
+        <h2>What Our Users Say</h2>
+        <p>Real businesses, real results — every day.</p>
+      </div>
+      <div class="testimonials-grid reveal-element">
+        <div class="testimonial-card glass">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"V-Invoice completely transformed how I invoice my clients. The PDF templates are beautiful and the GST format is exactly what I need."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f12234, #c01b29);">R</div>
+            <div>
+              <div class="author-name">Ravi Kumar</div>
+              <div class="author-role">Freelance Designer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass featured-testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The payment tracking with progress bars is a game-changer. I can see at a glance which clients have partial payments outstanding."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">P</div>
+            <div>
+              <div class="author-name">Priya Sharma</div>
+              <div class="author-role">Consulting Agency, Mumbai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Finally an invoicing app that works 100% offline. My data stays on my device and I can export XLSX reports for my accountant easily."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #16a34a, #15803d);">A</div>
+            <div>
+              <div class="author-name">Ahmed Al-Farsi</div>
+              <div class="author-role">Retail Business, Dubai</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ── Download CTA ───────────────────────────────────────────────── -->
+  <section id="download" class="banner-section">
+    <div class="banner-shapes">
+      <div class="b-shape b-shape-1"></div>
+      <div class="b-shape b-shape-2"></div>
+    </div>
+    <div class="container text-center banner-content">
+      <div class="banner-icon">🚀</div>
+      <h2>Ready to upgrade your invoicing?</h2>
+      <p>
+        Join the modern wave of growing businesses that trust V-Invoice to
+        manage their billing effectively. Free forever, no subscriptions.
+      </p>
+      <div class="banner-cta">
+        <a href="#download" class="btn btn-white btn-large">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 16V4m0 12l-4-4m4 4l4-4M4 20h16"/></svg>
+          Download V-Invoice — Free
+        </a>
+        <a href="#features" class="btn btn-outline-white btn-large">See All Features</a>
+      </div>
+      <div class="banner-trust">
+        <span>🔒 100% Offline</span>
+        <span>•</span>
+        <span>📱 Android First</span>
+        <span>•</span>
+        <span>🆓 Always Free</span>
+        <span>•</span>
+        <span>🔐 No Data Collection</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="container footer-content">
-      <div class="footer-col">
+      <div class="footer-col footer-brand">
         <div class="logo">
           <img src="assets/logo.png" alt="logo" class="logo-img small" />
           <span>V-Invoice</span>
         </div>
         <p>
-          Because "V" means "We". Intelligent charging and invoicing to grow
+          Because "V" means "We". Intelligent invoicing to grow
           your enterprise safely and effectively.
         </p>
+        <div class="footer-tagline">Organize Smarter, Bill Faster.</div>
       </div>
       <div class="footer-col">
         <h4>Application</h4>
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
-        <a href="contact.html">Support / Contact</a>
+        <a href="#analytics">Analytics</a>
         <a href="#download">Download App</a>
       </div>
       <div class="footer-col">
-        <h4>Legal</h4>
+        <h4>Support</h4>
+        <a href="contact.html">Contact Us</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Data Protection</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 V-Invoice. All rights reserved.</p>
+      <p>&copy; 2026 V-Invoice. All rights reserved. Made with ❤️ for businesses everywhere. &nbsp;·&nbsp;
+        <a href="privacy.html" style="color:#64748b;">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="terms.html" style="color:#64748b;">Terms</a>
+      </p>
     </div>
   </footer>
 
