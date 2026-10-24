@@ -146,4 +146,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ── UPI ID Copy to Clipboard ──────────────────────────────────────────────
+    const copyUpiBtn = document.getElementById('copyUpiBtn');
+    const upiIdValue = document.getElementById('upiIdValue');
+    const copyBtnText = document.getElementById('copyBtnText');
+
+    if (copyUpiBtn && upiIdValue) {
+        copyUpiBtn.addEventListener('click', async () => {
+            const upiId = upiIdValue.textContent.trim();
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(upiId);
+                } else {
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = upiId;
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+                    document.body.appendChild(tempInput);
+                    tempInput.focus();
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+                copyUpiBtn.classList.add('copied');
+                if (copyBtnText) copyBtnText.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    copyUpiBtn.classList.remove('copied');
+                    if (copyBtnText) copyBtnText.textContent = 'Copy UPI ID';
+                }, 2500);
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+        });
+    }
+
 });
